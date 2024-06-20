@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.MainPage">
+    <StackLayout Padding="20">
+        <Label Text="Bienvenido al formulario"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               Margin="0,20"
+               TextColor="LightGray"/>
+
+        <Frame CornerRadius="10" Padding="10" BackgroundColor="LightGray">
+            <StackLayout Spacing="15">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry x:Name="entryNombre" Placeholder="Ingrese su nombre" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Edad:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry x:Name="entryEdad" Placeholder="Ingrese su edad" Keyboard="Numeric" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Ocupación:" VerticalOptions="Center" TextColor="Black"/>
+                    <Entry x:Name="entryOcupacion" Placeholder="Ingrese su ocupación" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fecha de Nacimiento:" VerticalOptions="Center" TextColor="Black"/>
+                    <DatePicker x:Name="datePicker" Date="{Binding FechaNacimiento}" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Lenguaje de programación:" VerticalOptions="Center" TextColor="Black"/>
+                    <Picker x:Name="Op_Lenguaje" HorizontalOptions="FillAndExpand" SelectedIndexChanged="Func_Lenguaje">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>C#</x:String>
+                                <x:String>Java</x:String>
+                                <x:String>Python</x:String>
+                                <x:String>JavaScript</x:String>
+                                <x:String>Ruby</x:String>
+                                <x:String>Otro</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+
+                <Entry x:Name="Lenguaje_Lenguaje" Placeholder="Ingrese otro lenguaje de programación" IsVisible="False" HorizontalOptions="FillAndExpand"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Idioma:" VerticalOptions="Center" TextColor="Black"/>
+                    <Picker x:Name="Op_Idioma" HorizontalOptions="FillAndExpand" SelectedIndexChanged="Func_Idiom">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Español</x:String>
+                                <x:String>Inglés</x:String>
+                                <x:String>Francés</x:String>
+                                <x:String>Alemán</x:String>
+                                <x:String>Chino</x:String>
+                                <x:String>Otro</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+
+                <Entry x:Name="Idiom_Idiom" Placeholder="Ingrese otro idioma" IsVisible="False" HorizontalOptions="FillAndExpand"/>
+
+                <Button Text="Enviar" Clicked="Enviar_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="DodgerBlue" TextColor="White"/>
+
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
